@@ -3,7 +3,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Garamond, serif;
-  background: white;
+  background: lightgray;
 }
 
 /* Canvas particelle */
