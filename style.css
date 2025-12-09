@@ -7,7 +7,7 @@ body {
 }
 
 /* Canvas particelle */
-#canvas {
+canvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,12 +39,4 @@ body {
 }
 
 
-/* Canvas vetro opaco */
-#glass {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: block;
-  pointer-events: none; /* permette di cliccare sul canvas sottostante */
-}
+
