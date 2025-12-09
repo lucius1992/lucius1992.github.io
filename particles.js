@@ -37,12 +37,12 @@ function onMouseMove() {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
   mouseOnScreen = true;
-});
+};
 // quando il mouse lascia la finestra del browser
 window.addEventListener("mouseout",onMouseOut);
 function onMouseOut() {
     mouseOnScreen = false;  
-});
+};
 
 
 // ---- VECTOR ------------------------------------------------------
