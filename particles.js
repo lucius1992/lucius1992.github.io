@@ -73,7 +73,14 @@ bounce(width, height) {
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
   }
-
+  
+  applyMouseGravity(strength = 0.01) {
+    const dx = mouse.x - this.pos.x;
+    const dy = mouse.y - this.pos.y;
+    this.vel.x += dx * strength;
+    this.vel.y += dy * strength;
+  }
+  
   draw(context) {
     context.save();
     context.translate(this.pos.x, this.pos.y);
@@ -95,12 +102,7 @@ window.addEventListener("mousemove", (e) => {
   mouse.y = e.clientY;
 });
 
-  applyMouseGravity(strength = 0.01) {
-    const dx = mouse.x - this.pos.x;
-    const dy = mouse.y - this.pos.y;
-    this.vel.x += dx * strength;
-    this.vel.y += dy * strength;
-  }
+
 
 // ---- SKETCH -------------------------------------------------------
 
