@@ -3,7 +3,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Garamond, serif;
-  background: lightgray;
+  background: #6e6e70;
 }
 
 /* Canvas particelle */
@@ -21,7 +21,7 @@ body {
   width: 100%;
   text-align: center;
   font-size: 48px;
-  color: white;
+  color: #ffffff;
   z-index: 1;
   pointer-events: none;
 }
@@ -33,7 +33,7 @@ body {
   width: 100%;
   text-align: center;
   font-size: 24px;
-  color: white;
+  color: #ffffff;
   z-index: 1;
   pointer-events: none;
 }
