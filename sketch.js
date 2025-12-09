@@ -75,8 +75,26 @@ function animate() {
       particles.splice(i, 1);
     }
   });
-
+  
+ drawGlass();
   requestAnimationFrame(animate);
 }
 
 animate();
+
+
+
+
+// ---- glass / vetro opaco con displacement noise ----
+function drawGlass(){
+  const imgData = glassCtx.createImageData(width,height);
+  for(let i=0;i<imgData.data.length;i+=4){
+    const val = Math.floor(Math.random()*50)+200; // bianco leggermente variabile
+    imgData.data[i] = val;
+    imgData.data[i+1] = val;
+    imgData.data[i+2] = val;
+    imgData.data[i+3] = 50; // trasparenza
+  }
+  glassCtx.putImageData(imgData,0,0);
+}
+
