@@ -30,22 +30,15 @@ window.addEventListener("resize", resize);
 
 // ---- MOUSE --------------------------------------------------------
 const mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
-let mouseOnScreen = false;
+let mouseOnScreen = 5000;
 window.addEventListener("mouseover", onMouseOver);
 
 function onMouseOver(e) {
-  mouse.x = 100;//e.x;
-  mouse.y = 100;//e.y;
-  mouseOnScreen = true;
+  mouse.x = e.x;
+  mouse.y = e.y;
+  mouseOnScreen = 5000;
 };
-// quando il mouse lascia la finestra del browser
-window.addEventListener("mouseout",onMouseOut);
-function onMouseOut() {
-    mouseOnScreen = false;  
-};
-window.addEventListener("mouseleave", () => {
-  mouseOnScreen = false;
-});
+
 
 // ---- VECTOR ------------------------------------------------------
 
@@ -67,7 +60,7 @@ class Vector {
 const maxRadius = 4;
 const minRadius = 1;
 const lineWidth = 1;
-const strength = 0.0002; // forza piccola
+const strength = 0.002; // forza piccola
 const particlesColor = "black";
 const bgColor = "#6e6e70";
 
@@ -94,8 +87,10 @@ bounce(width, height) {
 }
 
   update() {  
+    
     const minDx = 330; // soglia minima
     const minDy = 330; // soglia minima
+    mouseOnScreen= mouseOnScreen -1;
     
     const dx = mouse.x - this.pos.x;
     const dy = mouse.y - this.pos.y;
@@ -103,7 +98,7 @@ bounce(width, height) {
     // applica la gravità solo se dx < minDx
     if (Math.abs(dx) < minDx &&
         Math.abs(dy) < minDy &&
-        mouseOnScreen) {
+        mouseOnScreen>0) {
       this.vel.x += dx * strength;
       this.vel.y += dy * strength;
 
