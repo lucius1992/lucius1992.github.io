@@ -36,6 +36,10 @@ window.addEventListener("mousemove", (e) => {
   mouse.y = e.clientY;
   mouseOnScreen = true;
 });
+// opzione: resetta quando il mouse esce dalla finestra
+window.addEventListener("mouseout", () => {
+  mouseOnScreen = false;
+});
 // ---- VECTOR ------------------------------------------------------
 
 class Vector {
@@ -56,7 +60,7 @@ class Vector {
 const maxRadius = 4;
 const minRadius = 1;
 const lineWidth = 1;
-const strength = 0.002; // forza piccola
+const strength = 0.000002; // forza piccola
 const particlesColor = "black";
 const bgColor = "#6e6e70";
 
@@ -98,6 +102,7 @@ bounce(width, height) {
 
         // log per debug
     console.log(`Gravità applicata: dx=${dx.toFixed(2)}, dy=${dy.toFixed(2)}, velX=${this.vel.x.toFixed(2)}, velY=${this.vel.y.toFixed(2)}`);
+    console.log("mouse: " + mouse.x + ", " + mouse.y);
 
     }
     
