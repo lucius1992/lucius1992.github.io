@@ -34,8 +34,8 @@ let mouseOnScreen = false;
 window.addEventListener("mouseover", onMouseOver);
 
 function onMouseOver(e) {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+  mouse.x = 100;//e.x;
+  mouse.y = 100;//e.y;
   mouseOnScreen = true;
 };
 // quando il mouse lascia la finestra del browser
