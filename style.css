@@ -6,12 +6,13 @@ body {
   background: white;
 }
 
-canvas {
-  display: block;
+/* Canvas particelle */
+#canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0; /* dietro il testo */
+  z-index: 0;
+  display: block;
 }
 
 /* ---- TITLE ---- */
@@ -36,4 +37,15 @@ canvas {
   color: black;
   z-index: 1;
   pointer-events: none;
+}
+
+
+/* Canvas vetro opaco */
+#glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  pointer-events: none; /* permette di cliccare sul canvas sottostante */
 }
