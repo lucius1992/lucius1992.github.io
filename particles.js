@@ -43,6 +43,13 @@ class Vector {
   }
 }
 
+// ---- MOUSE --------------------------------------------------------
+const mouse = { x: width/2, y: height/2 };
+window.addEventListener("mousemove", (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
 // ---- AGENT -------------------------------------------------------
 const maxRadius = 4;
 const minRadius = 1;
@@ -95,12 +102,7 @@ bounce(width, height) {
   }
 }
 
-// ---- MOUSE --------------------------------------------------------
-const mouse = { x: width/2, y: height/2 };
-window.addEventListener("mousemove", (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-});
+
 
 
 
