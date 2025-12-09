@@ -1,33 +1,16 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Canvas Sketch – versione browser</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Sketch</title>
   <style>
-    body { margin: 0; background: #000; }
-    canvas { display: block; }
+    body { margin: 0; background: #111; }
+    canvas { display: block; margin: 0 auto; }
   </style>
 </head>
 <body>
-<canvas id="myCanvas"></canvas>
-
-<script>
-  const canvas = document.getElementById('myCanvas');
-  const context = canvas.getContext('2d');
-
-  // imposta dimensioni
-  const width = 1000;
-  const height = 1000;
-  canvas.width = width;
-  canvas.height = height;
-
-  // "sketch" equivalente
-  function draw() {
-    context.fillStyle = 'white';
-    context.fillRect(0, 0, width, height);
-  }
-
-  draw();
-</script>
+  <canvas id="canvas"></canvas>
+  <script src="sketch.js"></script>
 </body>
 </html>
