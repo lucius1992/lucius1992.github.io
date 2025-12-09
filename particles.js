@@ -19,8 +19,16 @@ const context = canvas.getContext("2d");
 let width, height;
 
 function resize() {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  // canvas particelle
+  canvas.width = width;
+  canvas.height = height;
+
+  // canvas vetro
+  glassCanvas.width = width;
+  glassCanvas.height = height;  
 }
 resize();
 window.addEventListener("resize", resize);
