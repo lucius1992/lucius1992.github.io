@@ -21,17 +21,6 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
-// ---- AUDIO -------------------------------------------------------
-
-const audio = new Audio("./audio/vq.mp3");
-audio.autoplay = true;
-audio.loop = true;
-audio.play();
-
-// play/pause audio on click
-window.addEventListener("mouseup", () => {
-  audio.paused ? audio.play() : audio.pause();
-});
 
 // ---- VECTOR ------------------------------------------------------
 
