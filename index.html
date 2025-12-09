@@ -2,19 +2,32 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Il mio portfolio di applicazioni</title>
+  <title>Canvas Sketch – versione browser</title>
   <style>
-    body {
-      font-family: sans-serif;
-      background: #111;
-      color: #eee;
-      text-align: center;
-      padding: 50px;
-    }
+    body { margin: 0; background: #000; }
+    canvas { display: block; }
   </style>
 </head>
 <body>
-  <h1>Ciao! 👋</h1>
-  <p>Benvenuto nel mio sito sviluppato con GitHub Pages.</p>
+<canvas id="myCanvas"></canvas>
+
+<script>
+  const canvas = document.getElementById('myCanvas');
+  const context = canvas.getContext('2d');
+
+  // imposta dimensioni
+  const width = 1000;
+  const height = 1000;
+  canvas.width = width;
+  canvas.height = height;
+
+  // "sketch" equivalente
+  function draw() {
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, width, height);
+  }
+
+  draw();
+</script>
 </body>
 </html>
