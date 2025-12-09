@@ -55,6 +55,8 @@ const maxRadius = 4;
 const minRadius = 1;
 const lineWidth = 1;
 const strength = 0.2; // forza piccola
+const particlesColor = "black";
+const bgColor = "light-gray";
 
 
 class Agent {
@@ -96,9 +98,9 @@ bounce(width, height) {
     context.lineWidth = lineWidth;
     context.beginPath();
     context.arc(0, 0, this.radius, 0, Math.PI * 2);
-    context.fillStyle = "black"; // tutti neri
+    context.fillStyle = particlesColor; // tutti neri
     context.fill();
-    context.strokeStyle = "black"; // bordo nero
+    context.strokeStyle = particlesColor; // bordo nero
     context.stroke();
     context.restore();
   }
@@ -119,7 +121,7 @@ for (let i = 0; i < num; i++) {
 }
 
 function sketch() {
-  context.fillStyle = "white";
+  context.fillStyle = bgColor;
   context.fillRect(0, 0, width, height);
 
   const minDist = 330;
@@ -143,7 +145,7 @@ function sketch() {
         context.beginPath();
         context.moveTo(agent.pos.x, agent.pos.y);
         context.lineTo(other.pos.x, other.pos.y);
-        context.strokeStyle = "black";
+        context.strokeStyle = particlesColor;
         context.stroke();
       }
     }
