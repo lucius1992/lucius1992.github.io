@@ -44,7 +44,9 @@ window.addEventListener("mouseout",onMouseOut);
 function onMouseOut() {
     mouseOnScreen = false;  
 };
-
+window.addEventListener("mouseleave", () => {
+  mouseOnScreen = false;
+});
 
 // ---- VECTOR ------------------------------------------------------
 
