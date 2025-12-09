@@ -69,7 +69,7 @@ bounce(width, height) {
 }
 
   update() {
-    this.applyMouseGravity(0.5);
+    this.applyMouseGravity(10.5);
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
   }
