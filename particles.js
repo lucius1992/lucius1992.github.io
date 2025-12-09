@@ -10,6 +10,10 @@ function mapRange(value, inMin, inMax, outMin, outMax) {
 
 // ---- CANVAS SETUP -----------//-----------------------------------
 
+// ---- canvas vetro ----
+const glassCanvas = document.getElementById("glass");
+const glassCtx = glassCanvas.getContext("2d");
+// ---- canvas particelle ----
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 let width, height;
@@ -37,9 +41,9 @@ class Vector {
 }
 
 // ---- AGENT -------------------------------------------------------
-const maxRadius = 5;
-const minRadius = 2;
-const lineWidth = 4;
+const maxRadius = 3;
+const minRadius = 0.5;
+const lineWidth = 0.2;
 
 class Agent {
   constructor(x, y) {
@@ -129,8 +133,26 @@ function sketch() {
     a.bounce(width, height);
     a.draw(context);
   });
-
+  
+  drawGlass();
   requestAnimationFrame(sketch);
 }
 
 sketch();
+
+
+
+// ---- glass / vetro opaco con displacement noise ----
+function drawGlass(){
+  const imgData = glassCtx.createImageData(width,height);
+  for(let i=0;i<imgData.data.length;i+=4){
+    const val = Math.floor(Math.random()*50)+200; // bianco leggermente variabile
+    imgData.data[i] = val;
+    imgData.data[i+1] = val;
+    imgData.data[i+2] = val;
+    imgData.data[i+3] = 50; // trasparenza
+  }
+  glassCtx.putImageData(imgData,0,0);
+}
+
+
