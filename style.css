@@ -23,7 +23,7 @@ canvas {
   font-size: 48px;
   color: #ffffff;
   z-index: 1;
-  pointer-events: none;
+
 }
 
 /* ---- SUBTITLE ---- */
@@ -35,7 +35,7 @@ canvas {
   font-size: 24px;
   color: #ffffff;
   z-index: 1;
-  pointer-events: none;
+
 }
 
 
