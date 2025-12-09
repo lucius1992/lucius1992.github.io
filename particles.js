@@ -47,38 +47,18 @@ class Agent {
     this.vel = new Vector(randomRange(-1, 1), randomRange(-1, 1));
   }
 
-bounce(width, height) {
-  // Se fuori a sinistra
-  if (this.pos.x < this.radius + lineWidth) {
-    this.pos.x = this.radius + lineWidth;  // rientra
-    // NON invertire velocità
-  }
-  // Se fuori a destra
-  else if (this.pos.x > width - this.radius - lineWidth) {
-    this.pos.x = width - this.radius - lineWidth;
-  }
-
-  // Se fuori sopra
-  if (this.pos.y < this.radius + lineWidth) {
-    this.pos.y = this.radius + lineWidth;
-  }
-  // Se fuori sotto
-  else if (this.pos.y > height - this.radius - lineWidth) {
-    this.pos.y = height - this.radius - lineWidth;
-  }
-
-  // Inversione velocità SOLO se la particella sta effettivamente rimbalzando 
-  // (cioè ha superato il limite mentre si muove normalmente, non dopo un resize)
-  if (this.pos.x === this.radius + lineWidth || 
-      this.pos.x === width - this.radius - lineWidth) {
-    this.vel.x *= -1;
-  }
-  if (this.pos.y === this.radius + lineWidth || 
-      this.pos.y === height - this.radius - lineWidth) {
-    this.vel.y *= -1;
-  }
+bounce(width, height) { 
+  if ((this.pos.x <= this.radius + lineWidth || 
+      this.pos.x >= width - this.radius - lineWidth) && this.pos.x < width)
+  { 
+    this.vel.x *= -1; 
+  } 
+  if ((this.pos.y <= this.radius + lineWidth || 
+      this.pos.y >= height - this.radius - lineWidth)  && this.pos.y < height)
+  { 
+    this.vel.y *= -1; 
+  } 
 }
-
 
   update() {
     this.pos.x += this.vel.x;
