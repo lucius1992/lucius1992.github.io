@@ -43,6 +43,14 @@ window.addEventListener("mouseout", (e) => {
     mouseOnScreen = false;
   }
 });
+// alternativa più robusta con blur/focus
+window.addEventListener("blur", () => {
+  mouseOnScreen = false;
+});
+window.addEventListener("focus", () => {
+  mouseOnScreen = true;
+});
+
 // ---- VECTOR ------------------------------------------------------
 
 class Vector {
