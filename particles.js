@@ -94,7 +94,7 @@ for (let i = 0; i < num; i++) {
 }
 
 function sketch() {
-  context.fillStyle = "red";
+  context.fillStyle = "white";
   context.fillRect(0, 0, width, height);
 
   const minDist = 250;
