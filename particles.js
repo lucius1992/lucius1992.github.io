@@ -31,13 +31,12 @@ window.addEventListener("resize", resize);
 // ---- MOUSE --------------------------------------------------------
 const mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
 let mouseOnScreen = false;
-window.addEventListener("mousemove", onMouseMove);
+window.addEventListener("mouseover", onMouseOver);
 
-function onMouseMove(e) {
+function onMouseOver(e) {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
   mouseOnScreen = true;
- console.log("e: " + e.x + ", " + e.y); 
 };
 // quando il mouse lascia la finestra del browser
 window.addEventListener("mouseout",onMouseOut);
