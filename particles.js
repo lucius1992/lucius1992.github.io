@@ -30,9 +30,11 @@ window.addEventListener("resize", resize);
 
 // ---- MOUSE --------------------------------------------------------
 const mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
+let mouseOnScreen = false;
 window.addEventListener("mousemove", (e) => {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
+  mouseOnScreen = true;
 });
 // ---- VECTOR ------------------------------------------------------
 
@@ -82,14 +84,21 @@ bounce(width, height) {
 
   update() {  
     const minDx = 330; // soglia minima
+    const minDy = 330; // soglia minima
     
     const dx = mouse.x - this.pos.x;
     const dy = mouse.y - this.pos.y;
     
     // applica la gravità solo se dx < minDx
-    if (Math.abs(dx) < minDx) {
+    if (Math.abs(dx) < minDx &&
+        Math.abs(dy) < minDy &&
+        mouseOnScreen) {
       this.vel.x += dx * strength;
       this.vel.y += dy * strength;
+
+        // log per debug
+    console.log(`Gravità applicata: dx=${dx.toFixed(2)}, dy=${dy.toFixed(2)}, velX=${this.vel.x.toFixed(2)}, velY=${this.vel.y.toFixed(2)}`);
+
     }
     
     this.pos.x += this.vel.x;
