@@ -9,7 +9,7 @@ function mapRange(value, inMin, inMax, outMin, outMax) {
 }
 
 // ---- CANVAS SETUP -----------//-----------------------------------
-const glass = document.getElementById("glass");
+
 
 // ---- canvas particelle ----
 const canvas = document.getElementById("canvas");
@@ -24,9 +24,6 @@ function resize() {
   canvas.width = width;
   canvas.height = height;
 
-  // canvas vetro
-  glass.width = width;
-  glass.height = height;  
 }
 resize();
 window.addEventListener("resize", resize);
