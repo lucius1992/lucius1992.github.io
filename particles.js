@@ -28,7 +28,12 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
-
+// ---- MOUSE --------------------------------------------------------
+const mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
+window.addEventListener("mousemove", (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
 // ---- VECTOR ------------------------------------------------------
 
 class Vector {
@@ -49,6 +54,8 @@ class Vector {
 const maxRadius = 4;
 const minRadius = 1;
 const lineWidth = 1;
+const strength = 0.002; // forza piccola
+
 
 class Agent {
   constructor(x, y) {
@@ -71,6 +78,12 @@ bounce(width, height) {
 }
 
   update() {  
+    const dx = mouse.x - this.pos.x;
+    const dy = mouse.y - this.pos.y;
+ 
+    this.vel.x += dx * strength;
+    this.vel.y += dy * strength;
+    
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
   }
