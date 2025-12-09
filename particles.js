@@ -44,9 +44,9 @@ class Vector {
 }
 
 // ---- AGENT -------------------------------------------------------
-const maxRadius = 3;
-const minRadius = 0.5;
-const lineWidth = 0.2;
+const maxRadius = 4;
+const minRadius = 1;
+const lineWidth = 1;
 
 class Agent {
   constructor(x, y) {
