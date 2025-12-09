@@ -43,12 +43,7 @@ class Vector {
   }
 }
 
-// ---- MOUSE --------------------------------------------------------
-const mouse = { x: width/2, y: height/2 };
-window.addEventListener("mousemove", (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-});
+
 
 // ---- AGENT -------------------------------------------------------
 const maxRadius = 4;
@@ -75,18 +70,12 @@ bounce(width, height) {
   } 
 }
 
-  update() {
-    //this.applyMouseGravity(0.0005);
+  update() {  
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
   }
   
-  applyMouseGravity(strength = 0.01) {
-    const dx = mouse.x - this.pos.x;
-    const dy = mouse.y - this.pos.y;
-    this.vel.x += dx * strength;
-    this.vel.y += dy * strength;
-  }
+
   
   draw(context) {
     context.save();
