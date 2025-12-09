@@ -54,7 +54,7 @@ class Vector {
 const maxRadius = 4;
 const minRadius = 1;
 const lineWidth = 1;
-const strength = 0.000000000000002; // forza piccola
+const strength = 0.002; // forza piccola
 const particlesColor = "black";
 const bgColor = #6e6e70;
 
@@ -80,11 +80,16 @@ bounce(width, height) {
 }
 
   update() {  
+    const minDx = 330; // soglia minima
+    
     const dx = mouse.x - this.pos.x;
     const dy = mouse.y - this.pos.y;
- 
-    this.vel.x += dx * strength;
-    this.vel.y += dy * strength;
+    
+    // applica la gravità solo se dx < minDx
+    if (Math.abs(dx) < minDx) {
+      this.vel.x += dx * strength;
+      this.vel.y += dy * strength;
+    }
     
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
