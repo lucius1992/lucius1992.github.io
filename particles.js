@@ -8,7 +8,7 @@ function mapRange(value, inMin, inMax, outMin, outMax) {
   return (value - inMin) / (inMax - inMin) * (outMax - outMin) + outMin;
 }
 
-// ---- CANVAS SETUP -----------------------------------------------
+// ---- CANVAS SETUP -----------//-----------------------------------
 
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
