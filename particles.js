@@ -31,17 +31,17 @@ window.addEventListener("resize", resize);
 // ---- MOUSE --------------------------------------------------------
 const mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
 let mouseOnScreen = false;
-window.addEventListener("mousemove", (e) => {
+window.addEventListener("mousemove", onMouseMove);
+
+function onMouseMove() {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
   mouseOnScreen = true;
 });
 // quando il mouse lascia la finestra del browser
-window.addEventListener("mouseout", (e) => {
-  // verifico se il mouse ha lasciato il viewport
-  if (e.relatedTarget === null) {
-    mouseOnScreen = false;
-  }
+window.addEventListener("mouseout",onMouseOut);
+function onMouseOut() {
+    mouseOnScreen = false;  
 });
 
 
