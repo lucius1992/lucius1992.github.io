@@ -60,7 +60,7 @@ class Vector {
 const maxRadius = 4;
 const minRadius = 1;
 const lineWidth = 1;
-const strength = 0.000002; // forza piccola
+const strength = 0.00002; // forza piccola
 const particlesColor = "black";
 const bgColor = "#6e6e70";
 
@@ -102,10 +102,9 @@ bounce(width, height) {
 
         // log per debug
     console.log(`Gravità applicata: dx=${dx.toFixed(2)}, dy=${dy.toFixed(2)}, velX=${this.vel.x.toFixed(2)}, velY=${this.vel.y.toFixed(2)}`);
-    console.log("mouse: " + mouse.x + ", " + mouse.y);
-
+    console.log("mouse: " + mouse.x + ", " + mouse.y); 
     }
-    
+    console.log("ON/off: " + mouseOnScreen);
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
   }
