@@ -56,7 +56,7 @@ const minRadius = 1;
 const lineWidth = 1;
 const strength = 0.2; // forza piccola
 const particlesColor = "black";
-const bgColor = "light-gray";
+const bgColor = "gray";
 
 
 class Agent {
