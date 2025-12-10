@@ -15,7 +15,7 @@ function mapRange(value, inMin, inMax, outMin, outMax) {
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 let width, height;
-let pippo;
+let pippoplus;
 
 function resize() {
   width = window.innerWidth;
