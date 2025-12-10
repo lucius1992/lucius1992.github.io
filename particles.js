@@ -44,10 +44,10 @@ function onMouseMove(e) {
 
 };
 
-// controlla ogni 200ms se si è fermato
+// controlla ogni 100ms se si è fermato
 setInterval(() => {
-  mouseMoving = (Date.now() - lastMove < 100);
-}, 200);
+  mouseOnScreen = (Date.now() - lastMove < 100);
+}, 100);
 
 // ---- VECTOR ------------------------------------------------------
 
