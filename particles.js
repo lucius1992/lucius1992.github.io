@@ -31,7 +31,7 @@ window.addEventListener("resize", resize);
 // ---- MOUSE --------------------------------------------------------
 const mouse = { x: 0, y: 0};
 let mouseOnScreen = false;
-canvas.addEventListener("mousemove", onMouseMove);
+window.addEventListener("mousemove", onMouseMove);
 
 function onMouseMove(e) {
   mouse.x = e.x;
@@ -39,7 +39,7 @@ function onMouseMove(e) {
   mouseOnScreen = true;
 };
 
-canvas.addEventListener("mouseleave", onMouseLeave);
+window.addEventListener("mouseleave", onMouseLeave);
 function onMouseLeave() {
   mouseOnScreen = false; //
 };
