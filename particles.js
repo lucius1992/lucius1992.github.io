@@ -38,7 +38,7 @@ window.addEventListener("mousemove", onMouseMove);
 function onMouseMove(e) {
   mouse.x = e.x;
   mouse.y = e.y;
-  if(prevMouse.x != mouse.x && prevMouse.y != mouse.y){
+  if(prevMouse.x <> mouse.x && prevMouse.y <> mouse.y){
     prevMouse.x = mouse.x;
     prevMouse.y = mouse.y;
     mouseOnScreen = true;
