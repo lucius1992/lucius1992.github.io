@@ -65,7 +65,7 @@ class Vector {
 const maxRadius = 4;
 const minRadius = 1;
 const lineWidth = 1;
-const strength = 0.002; // forza piccola
+const strength = 0.0002; // forza piccola
 const particlesColor = "black";
 const bgColor = "#3b3b3d";
 
