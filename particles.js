@@ -29,16 +29,20 @@ resize();
 window.addEventListener("resize", resize);
 
 // ---- MOUSE --------------------------------------------------------
-const mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
-let mouseOnScreen = 5000;
-window.addEventListener("mouseover", onMouseOver);
+const mouse = { x: 0, y: 0};
+let mouseOnScreen = false;
+canvas.addEventListener("mousemove", onMouseMove);
 
-function onMouseOver(e) {
+function onMouseMove(e) {
   mouse.x = e.x;
   mouse.y = e.y;
-  mouseOnScreen = 5000;
+  mouseOnScreen = true;
 };
 
+canvas.addEventListener("mouseleave", onMouseLeave);
+function onMouseLeave() {
+  mouseOnScreen = false;
+};
 
 // ---- VECTOR ------------------------------------------------------
 
@@ -62,7 +66,7 @@ const minRadius = 1;
 const lineWidth = 1;
 const strength = 0.002; // forza piccola
 const particlesColor = "black";
-const bgColor = "#6e6e70";
+const bgColor = "#3b3b3d";
 
 
 
