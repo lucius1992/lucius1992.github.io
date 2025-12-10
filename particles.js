@@ -94,7 +94,7 @@ bounce(width, height) {
     
     const minDx = 330; // soglia minima
     const minDy = 330; // soglia minima
-    mouseOnScreen= mouseOnScreen -1;
+
     
     const dx = mouse.x - this.pos.x;
     const dy = mouse.y - this.pos.y;
@@ -102,7 +102,7 @@ bounce(width, height) {
     // applica la gravità solo se dx < minDx
     if (Math.abs(dx) < minDx &&
         Math.abs(dy) < minDy &&
-        mouseOnScreen>0) {
+        mouseOnScreen) {
       this.vel.x += dx * strength;
       this.vel.y += dy * strength;
 
