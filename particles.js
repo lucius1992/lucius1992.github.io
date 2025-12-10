@@ -41,7 +41,7 @@ function onMouseMove(e) {
 
 canvas.addEventListener("mouseleave", onMouseLeave);
 function onMouseLeave() {
-  mouseOnScreen = false;
+  mouseOnScreen = false; //
 };
 
 // ---- VECTOR ------------------------------------------------------
