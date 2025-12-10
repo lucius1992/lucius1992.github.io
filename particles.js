@@ -31,24 +31,23 @@ window.addEventListener("resize", resize);
 
 // ---- MOUSE --------------------------------------------------------
 const mouse = { x: 0, y: 0};
-const prevMouse = { x: 0, y: 0};
+
 let mouseOnScreen = false;
+let lastMove = Date.now();
 window.addEventListener("mousemove", onMouseMove);
 
 function onMouseMove(e) {
   mouse.x = e.x;
   mouse.y = e.y;
-  if(prevMouse.x != mouse.x || prevMouse.y != mouse.y){
-    prevMouse.x = mouse.x;
-    prevMouse.y = mouse.y;
-    mouseOnScreen = true;
-  }
-  else{
-     mouseOnScreen = false;
-  }
+  lastMove = Date.now();
+  mouseOnScreen = true;
+
 };
 
-
+// controlla ogni 200ms se si è fermato
+setInterval(() => {
+  mouseMoving = (Date.now() - lastMove < 100);
+}, 200);
 
 // ---- VECTOR ------------------------------------------------------
 
