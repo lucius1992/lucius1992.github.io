@@ -31,19 +31,24 @@ window.addEventListener("resize", resize);
 
 // ---- MOUSE --------------------------------------------------------
 const mouse = { x: 0, y: 0};
+const prevMouse = { x: 0, y: 0};
 let mouseOnScreen = false;
 window.addEventListener("mousemove", onMouseMove);
 
 function onMouseMove(e) {
   mouse.x = e.x;
   mouse.y = e.y;
-  mouseOnScreen = true;
+  if(prevMouse.x != mouse.x && prevMouse.y != mouse.y){
+    prevMouse.x = mouse.x;
+    prevMouse.y = mouse.y;
+    mouseOnScreen = true;
+  }
+  else{
+     mouseOnScreen = false;
+  }
 };
 
-window.addEventListener("mouseleave", onMouseLeave);
-function onMouseLeave() {
-  mouseOnScreen = false; //
-};
+
 
 // ---- VECTOR ------------------------------------------------------
 
